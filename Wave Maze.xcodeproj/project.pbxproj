@@ -1,0 +1,644 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB69C838283E9ABB00D9E6DF /* Wave_MazeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69C837283E9ABB00D9E6DF /* Wave_MazeApp.swift */; };
+		AB69C83C283E9ABD00D9E6DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB69C83B283E9ABD00D9E6DF /* Assets.xcassets */; };
+		AB69C83F283E9ABD00D9E6DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB69C83E283E9ABD00D9E6DF /* Preview Assets.xcassets */; };
+		AB69C849283E9ABE00D9E6DF /* Wave_MazeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69C848283E9ABE00D9E6DF /* Wave_MazeTests.swift */; };
+		AB69C853283E9ABE00D9E6DF /* Wave_MazeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69C852283E9ABE00D9E6DF /* Wave_MazeUITests.swift */; };
+		AB69C855283E9ABE00D9E6DF /* Wave_MazeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69C854283E9ABE00D9E6DF /* Wave_MazeUITestsLaunchTests.swift */; };
+		AB69C862283E9B1500D9E6DF /* MazeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69C861283E9B1500D9E6DF /* MazeView.swift */; };
+		AB69C865283EA00000D9E6DF /* Straight.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69C864283EA00000D9E6DF /* Straight.swift */; };
+		AB69C867283EA39700D9E6DF /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69C866283EA39700D9E6DF /* GridView.swift */; };
+		AB69C869283EB1D600D9E6DF /* Intersection3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69C868283EB1D600D9E6DF /* Intersection3.swift */; };
+		AB69C86B283EB55900D9E6DF /* Intersection4.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69C86A283EB55900D9E6DF /* Intersection4.swift */; };
+		AB69C86D283EB5CC00D9E6DF /* Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69C86C283EB5CC00D9E6DF /* Corner.swift */; };
+		AB69C86F283EB6A400D9E6DF /* DeadEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69C86E283EB6A400D9E6DF /* DeadEnd.swift */; };
+		AB69C871283EB99200D9E6DF /* EmptyTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69C870283EB99200D9E6DF /* EmptyTile.swift */; };
+		AB69C873283EBA7200D9E6DF /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69C872283EBA7200D9E6DF /* States.swift */; };
+		AB69C875283EBAAF00D9E6DF /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69C874283EBAAF00D9E6DF /* Tile.swift */; };
+		AB69C878283EC55700D9E6DF /* SocketInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69C877283EC55700D9E6DF /* SocketInfo.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AB69C845283E9ABE00D9E6DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB69C82C283E9ABB00D9E6DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB69C833283E9ABB00D9E6DF;
+			remoteInfo = "Wave Maze";
+		};
+		AB69C84F283E9ABE00D9E6DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB69C82C283E9ABB00D9E6DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB69C833283E9ABB00D9E6DF;
+			remoteInfo = "Wave Maze";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AB69C834283E9ABB00D9E6DF /* Wave Maze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wave Maze.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB69C837283E9ABB00D9E6DF /* Wave_MazeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave_MazeApp.swift; sourceTree = "<group>"; };
+		AB69C83B283E9ABD00D9E6DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB69C83E283E9ABD00D9E6DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AB69C844283E9ABE00D9E6DF /* Wave MazeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wave MazeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB69C848283E9ABE00D9E6DF /* Wave_MazeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave_MazeTests.swift; sourceTree = "<group>"; };
+		AB69C84E283E9ABE00D9E6DF /* Wave MazeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wave MazeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB69C852283E9ABE00D9E6DF /* Wave_MazeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave_MazeUITests.swift; sourceTree = "<group>"; };
+		AB69C854283E9ABE00D9E6DF /* Wave_MazeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave_MazeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AB69C861283E9B1500D9E6DF /* MazeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeView.swift; sourceTree = "<group>"; };
+		AB69C864283EA00000D9E6DF /* Straight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Straight.swift; sourceTree = "<group>"; };
+		AB69C866283EA39700D9E6DF /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		AB69C868283EB1D600D9E6DF /* Intersection3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intersection3.swift; sourceTree = "<group>"; };
+		AB69C86A283EB55900D9E6DF /* Intersection4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intersection4.swift; sourceTree = "<group>"; };
+		AB69C86C283EB5CC00D9E6DF /* Corner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corner.swift; sourceTree = "<group>"; };
+		AB69C86E283EB6A400D9E6DF /* DeadEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadEnd.swift; sourceTree = "<group>"; };
+		AB69C870283EB99200D9E6DF /* EmptyTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTile.swift; sourceTree = "<group>"; };
+		AB69C872283EBA7200D9E6DF /* States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
+		AB69C874283EBAAF00D9E6DF /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		AB69C877283EC55700D9E6DF /* SocketInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketInfo.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB69C831283E9ABB00D9E6DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB69C841283E9ABE00D9E6DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB69C84B283E9ABE00D9E6DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB69C82B283E9ABB00D9E6DF = {
+			isa = PBXGroup;
+			children = (
+				AB69C836283E9ABB00D9E6DF /* Wave Maze */,
+				AB69C847283E9ABE00D9E6DF /* Wave MazeTests */,
+				AB69C851283E9ABE00D9E6DF /* Wave MazeUITests */,
+				AB69C835283E9ABB00D9E6DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AB69C835283E9ABB00D9E6DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB69C834283E9ABB00D9E6DF /* Wave Maze.app */,
+				AB69C844283E9ABE00D9E6DF /* Wave MazeTests.xctest */,
+				AB69C84E283E9ABE00D9E6DF /* Wave MazeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB69C836283E9ABB00D9E6DF /* Wave Maze */ = {
+			isa = PBXGroup;
+			children = (
+				AB69C874283EBAAF00D9E6DF /* Tile.swift */,
+				AB69C877283EC55700D9E6DF /* SocketInfo.swift */,
+				AB69C876283EBF6600D9E6DF /* SectionTiles */,
+				AB69C872283EBA7200D9E6DF /* States.swift */,
+				AB69C863283E9F9900D9E6DF /* Maze Sections */,
+				AB69C837283E9ABB00D9E6DF /* Wave_MazeApp.swift */,
+				AB69C861283E9B1500D9E6DF /* MazeView.swift */,
+				AB69C866283EA39700D9E6DF /* GridView.swift */,
+				AB69C83B283E9ABD00D9E6DF /* Assets.xcassets */,
+				AB69C83D283E9ABD00D9E6DF /* Preview Content */,
+			);
+			path = "Wave Maze";
+			sourceTree = "<group>";
+		};
+		AB69C83D283E9ABD00D9E6DF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AB69C83E283E9ABD00D9E6DF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AB69C847283E9ABE00D9E6DF /* Wave MazeTests */ = {
+			isa = PBXGroup;
+			children = (
+				AB69C848283E9ABE00D9E6DF /* Wave_MazeTests.swift */,
+			);
+			path = "Wave MazeTests";
+			sourceTree = "<group>";
+		};
+		AB69C851283E9ABE00D9E6DF /* Wave MazeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AB69C852283E9ABE00D9E6DF /* Wave_MazeUITests.swift */,
+				AB69C854283E9ABE00D9E6DF /* Wave_MazeUITestsLaunchTests.swift */,
+			);
+			path = "Wave MazeUITests";
+			sourceTree = "<group>";
+		};
+		AB69C863283E9F9900D9E6DF /* Maze Sections */ = {
+			isa = PBXGroup;
+			children = (
+				AB69C864283EA00000D9E6DF /* Straight.swift */,
+				AB69C870283EB99200D9E6DF /* EmptyTile.swift */,
+				AB69C86E283EB6A400D9E6DF /* DeadEnd.swift */,
+				AB69C86C283EB5CC00D9E6DF /* Corner.swift */,
+				AB69C868283EB1D600D9E6DF /* Intersection3.swift */,
+				AB69C86A283EB55900D9E6DF /* Intersection4.swift */,
+			);
+			path = "Maze Sections";
+			sourceTree = "<group>";
+		};
+		AB69C876283EBF6600D9E6DF /* SectionTiles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SectionTiles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB69C833283E9ABB00D9E6DF /* Wave Maze */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB69C858283E9ABE00D9E6DF /* Build configuration list for PBXNativeTarget "Wave Maze" */;
+			buildPhases = (
+				AB69C830283E9ABB00D9E6DF /* Sources */,
+				AB69C831283E9ABB00D9E6DF /* Frameworks */,
+				AB69C832283E9ABB00D9E6DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Wave Maze";
+			productName = "Wave Maze";
+			productReference = AB69C834283E9ABB00D9E6DF /* Wave Maze.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AB69C843283E9ABE00D9E6DF /* Wave MazeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB69C85B283E9ABE00D9E6DF /* Build configuration list for PBXNativeTarget "Wave MazeTests" */;
+			buildPhases = (
+				AB69C840283E9ABE00D9E6DF /* Sources */,
+				AB69C841283E9ABE00D9E6DF /* Frameworks */,
+				AB69C842283E9ABE00D9E6DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB69C846283E9ABE00D9E6DF /* PBXTargetDependency */,
+			);
+			name = "Wave MazeTests";
+			productName = "Wave MazeTests";
+			productReference = AB69C844283E9ABE00D9E6DF /* Wave MazeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AB69C84D283E9ABE00D9E6DF /* Wave MazeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB69C85E283E9ABE00D9E6DF /* Build configuration list for PBXNativeTarget "Wave MazeUITests" */;
+			buildPhases = (
+				AB69C84A283E9ABE00D9E6DF /* Sources */,
+				AB69C84B283E9ABE00D9E6DF /* Frameworks */,
+				AB69C84C283E9ABE00D9E6DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB69C850283E9ABE00D9E6DF /* PBXTargetDependency */,
+			);
+			name = "Wave MazeUITests";
+			productName = "Wave MazeUITests";
+			productReference = AB69C84E283E9ABE00D9E6DF /* Wave MazeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB69C82C283E9ABB00D9E6DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					AB69C833283E9ABB00D9E6DF = {
+						CreatedOnToolsVersion = 13.4;
+					};
+					AB69C843283E9ABE00D9E6DF = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = AB69C833283E9ABB00D9E6DF;
+					};
+					AB69C84D283E9ABE00D9E6DF = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = AB69C833283E9ABB00D9E6DF;
+					};
+				};
+			};
+			buildConfigurationList = AB69C82F283E9ABB00D9E6DF /* Build configuration list for PBXProject "Wave Maze" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AB69C82B283E9ABB00D9E6DF;
+			productRefGroup = AB69C835283E9ABB00D9E6DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB69C833283E9ABB00D9E6DF /* Wave Maze */,
+				AB69C843283E9ABE00D9E6DF /* Wave MazeTests */,
+				AB69C84D283E9ABE00D9E6DF /* Wave MazeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB69C832283E9ABB00D9E6DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB69C83F283E9ABD00D9E6DF /* Preview Assets.xcassets in Resources */,
+				AB69C83C283E9ABD00D9E6DF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB69C842283E9ABE00D9E6DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB69C84C283E9ABE00D9E6DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB69C830283E9ABB00D9E6DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB69C838283E9ABB00D9E6DF /* Wave_MazeApp.swift in Sources */,
+				AB69C869283EB1D600D9E6DF /* Intersection3.swift in Sources */,
+				AB69C865283EA00000D9E6DF /* Straight.swift in Sources */,
+				AB69C867283EA39700D9E6DF /* GridView.swift in Sources */,
+				AB69C878283EC55700D9E6DF /* SocketInfo.swift in Sources */,
+				AB69C86D283EB5CC00D9E6DF /* Corner.swift in Sources */,
+				AB69C873283EBA7200D9E6DF /* States.swift in Sources */,
+				AB69C86F283EB6A400D9E6DF /* DeadEnd.swift in Sources */,
+				AB69C871283EB99200D9E6DF /* EmptyTile.swift in Sources */,
+				AB69C862283E9B1500D9E6DF /* MazeView.swift in Sources */,
+				AB69C875283EBAAF00D9E6DF /* Tile.swift in Sources */,
+				AB69C86B283EB55900D9E6DF /* Intersection4.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB69C840283E9ABE00D9E6DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB69C849283E9ABE00D9E6DF /* Wave_MazeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB69C84A283E9ABE00D9E6DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB69C855283E9ABE00D9E6DF /* Wave_MazeUITestsLaunchTests.swift in Sources */,
+				AB69C853283E9ABE00D9E6DF /* Wave_MazeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AB69C846283E9ABE00D9E6DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB69C833283E9ABB00D9E6DF /* Wave Maze */;
+			targetProxy = AB69C845283E9ABE00D9E6DF /* PBXContainerItemProxy */;
+		};
+		AB69C850283E9ABE00D9E6DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB69C833283E9ABB00D9E6DF /* Wave Maze */;
+			targetProxy = AB69C84F283E9ABE00D9E6DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AB69C856283E9ABE00D9E6DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AB69C857283E9ABE00D9E6DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AB69C859283E9ABE00D9E6DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Wave Maze/Preview Content\"";
+				DEVELOPMENT_TEAM = GKDG24URL3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Chase.Wave-Maze";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AB69C85A283E9ABE00D9E6DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Wave Maze/Preview Content\"";
+				DEVELOPMENT_TEAM = GKDG24URL3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Chase.Wave-Maze";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AB69C85C283E9ABE00D9E6DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GKDG24URL3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Chase.Wave-MazeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wave Maze.app/Wave Maze";
+			};
+			name = Debug;
+		};
+		AB69C85D283E9ABE00D9E6DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GKDG24URL3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Chase.Wave-MazeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wave Maze.app/Wave Maze";
+			};
+			name = Release;
+		};
+		AB69C85F283E9ABE00D9E6DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GKDG24URL3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Chase.Wave-MazeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Wave Maze";
+			};
+			name = Debug;
+		};
+		AB69C860283E9ABE00D9E6DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GKDG24URL3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Chase.Wave-MazeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Wave Maze";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB69C82F283E9ABB00D9E6DF /* Build configuration list for PBXProject "Wave Maze" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB69C856283E9ABE00D9E6DF /* Debug */,
+				AB69C857283E9ABE00D9E6DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB69C858283E9ABE00D9E6DF /* Build configuration list for PBXNativeTarget "Wave Maze" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB69C859283E9ABE00D9E6DF /* Debug */,
+				AB69C85A283E9ABE00D9E6DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB69C85B283E9ABE00D9E6DF /* Build configuration list for PBXNativeTarget "Wave MazeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB69C85C283E9ABE00D9E6DF /* Debug */,
+				AB69C85D283E9ABE00D9E6DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB69C85E283E9ABE00D9E6DF /* Build configuration list for PBXNativeTarget "Wave MazeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB69C85F283E9ABE00D9E6DF /* Debug */,
+				AB69C860283E9ABE00D9E6DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB69C82C283E9ABB00D9E6DF /* Project object */;
+}
