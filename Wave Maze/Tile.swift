@@ -10,9 +10,11 @@ import SwiftUI
 private let bounds = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: UIScreen.main.bounds.height - UIScreen.main.bounds.height/4.5)
 public class Tile{
     var mesh: String = "EmptyTile"
+    var collapsed = false
     var x: Int
     var y: Int
-    var possiblePrototypes: [String] = ["Straight","DeadEnd","Corner","Intersection3","Intersection4"]
+    var possiblePrototypes: [String] = []
+    var possibleRotations: [Int] = []
     var neighbours: [Tile] = []
     var rotation: Int
     var entropy: Int = 0
@@ -31,20 +33,39 @@ public class Tile{
         self.rotation = rotation
         self.mesh = mesh
         self.fillSockets()
+        self.fillPrototypes()
         self.entropy = possiblePrototypes.count-1
-        print(sockets)
+        // print(possibleRotations)
+       //print(possiblePrototypes)
        
+    }
+    func fillPrototypes(){
+        for i in socketInfo{
+            for j in 0...i.value.count-1{
+               possiblePrototypes.append(i.key)
+               possibleRotations.append(j)
+            }
+        }
+        
     }
     func fillSockets(){
         print(mesh)
-        sockets = (socketInfo[mesh]?[rotation]) as! [Int]
+        sockets = (socketInfo[mesh]?[rotation])!
         
     }
-    func constrain(_ prototype: String){
+    func collapse(){
+        let r = Int.random(in: 0...self.possiblePrototypes.count-1)
+        self.mesh = self.possiblePrototypes[r]
+        self.rotation = self.possibleRotations[r]
+        self.collapsed = true
+        self.fillSockets()
+    }
+    func constrain(_ prototype: String, _ rotation: Int){
         if(entropy != 0){
             for i in 0...possiblePrototypes.count-1{
-                if prototype == possiblePrototypes[i]{
+                if prototype == possiblePrototypes[i] && rotation == possibleRotations[i]{
                     possiblePrototypes.remove(at: i)
+                    possibleRotations.remove(at: i)
                     entropy -= 1
                 }
             }

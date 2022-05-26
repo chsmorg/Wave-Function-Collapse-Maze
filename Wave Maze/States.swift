@@ -22,14 +22,16 @@ class States: ObservableObject {
         self.vSize = Int(bounds.height/(bounds.width/CGFloat(size)))
         self.tileSize = bounds.width/CGFloat(size)
         genEmptyMaze()
-        print(maze)
     }
     
     func genEmptyMaze(){
         for i in 0...vSize-1{
             for j in 0...size-1{
                 if (i == 0 && j == 0) || (i == vSize-1 && j == size-1) {
-                    self.maze.append(Tile(x: j, y: i, rotation: 0, mesh: "Straight"))
+                    let t = Tile(x: j, y: i, rotation: 0, mesh: "Straight")
+                    t.collapsed = true
+                    self.maze.append(t)
+                    
                 }
                 else{
                     self.maze.append(Tile(x: j, y: i, rotation: 0, mesh: "EmptyTile"))
@@ -37,6 +39,27 @@ class States: ObservableObject {
                 
             }
         }
+    }
+    
+    func isCollapsed()-> Bool{
+        for i in maze{
+            if i.collapsed == false{
+                return false
+            }
+        }
+        return true
+    }
+    func getLowestEntropyTile() -> Tile {
+        var entropy = 100
+        var tile: Tile? = nil
+        for i in maze{
+            if i.entropy < entropy && i.collapsed == false {
+                entropy = i.entropy
+                tile = i
+                
+            }
+        }
+        return tile!
     }
     
     func genRandMaze(){
