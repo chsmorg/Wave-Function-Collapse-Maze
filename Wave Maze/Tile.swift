@@ -14,8 +14,7 @@ public class Tile{
     var x: Int
     var y: Int
     var possiblePrototypes: [String] = []
-    var possibleRotations: [Int] = []
-    var neighbours: [Tile] = []
+    //var neighbours: [Tile] = []
     var rotation: Int
     var entropy: Int = 0
     
@@ -24,7 +23,6 @@ public class Tile{
     //1 = south
     //2 = east
     //3 = west
-    var sockets: [Int] = []
     
     
     init(x: Int , y: Int, rotation: Int, mesh: String){
@@ -32,7 +30,6 @@ public class Tile{
         self.y = y
         self.rotation = rotation
         self.mesh = mesh
-        self.fillSockets()
         self.fillPrototypes()
         self.entropy = possiblePrototypes.count-1
         // print(possibleRotations)
@@ -41,31 +38,30 @@ public class Tile{
     }
     func fillPrototypes(){
         for i in socketInfo{
-            for j in 0...i.value.count-1{
-               possiblePrototypes.append(i.key)
-               possibleRotations.append(j)
-            }
+            possiblePrototypes.append(i.key)
         }
-        
-    }
-    func fillSockets(){
-        print(mesh)
-        sockets = (socketInfo[mesh]?[rotation])!
         
     }
     func collapse(){
         let r = Int.random(in: 0...self.possiblePrototypes.count-1)
-        self.mesh = self.possiblePrototypes[r]
-        self.rotation = self.possibleRotations[r]
+        let prototype = self.possiblePrototypes[r]
+        setTileData(prototype)
         self.collapsed = true
-        self.fillSockets()
     }
+    
+    func setTileData(_ prototype: String){
+        let tile = socketInfo[prototype]!
+        self.mesh = tile[0]["mesh"]! as! String
+        self.rotation = tile[1]["rotation"] as! Int
+    }
+    
+    
     func constrain(_ prototype: String, _ rotation: Int){
         if(entropy != 0){
             for i in 0...possiblePrototypes.count-1{
-                if prototype == possiblePrototypes[i] && rotation == possibleRotations[i]{
+                if prototype == possiblePrototypes[i]{
                     possiblePrototypes.remove(at: i)
-                    possibleRotations.remove(at: i)
+                    
                     entropy -= 1
                 }
             }

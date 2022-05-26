@@ -15,6 +15,7 @@ class States: ObservableObject {
     @Published var tileSize: CGFloat
     @Published var vSize: Int
     @Published var maze: [Tile] = []
+    @Published var stack: [Tile] = []
     
     init(size: Int, bounds: CGRect){
         self.size = size
@@ -39,6 +40,46 @@ class States: ObservableObject {
                 
             }
         }
+    }
+    func propagate(_ tile: Tile){
+        stack.append(tile)
+        
+        while stack.count > 0{
+            let curTile = stack.popLast()
+            
+            for dirs in dirs(curTile!){
+               // let possibleProtos = dirs.possiblePrototypes
+                
+            }
+            
+        }
+    }
+    
+    func dirs(_ tile: Tile)-> [Tile]{
+        var tiles: [Tile] = []
+        
+        var t = findTile(tile.x+1, tile.y)
+        if t != nil {tiles.append(t!)}
+        
+        t = findTile(tile.x-1, tile.y)
+        if t != nil {tiles.append(t!)}
+        
+        t = findTile(tile.x, tile.y-1)
+        if t != nil {tiles.append(t!)}
+        
+        t = findTile(tile.x, tile.y+1)
+        if t != nil {tiles.append(t!)}
+        
+        return tiles
+    }
+    
+    func findTile(_ x: Int, _ y: Int)-> Tile?{
+        for i in maze{
+            if i.x == x && i.y == y && i.collapsed == false{
+                return i
+            }
+        }
+        return nil
     }
     
     func isCollapsed()-> Bool{
