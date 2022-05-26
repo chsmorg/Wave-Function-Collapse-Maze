@@ -37,8 +37,8 @@ struct MazeView: View {
     }
 }
 
-struct Maze_Previews: PreviewProvider {
-    static var previews: some View {
-        MazeView()
-    }
-}
+//struct Maze_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MazeView()
+//    }
+//}

@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 import AVFoundation
 
+private let faces = ["n","s","e","w"]
+
 class States: ObservableObject {
     @Published var bounds: CGRect
     @Published var size: Int
@@ -23,6 +25,11 @@ class States: ObservableObject {
         self.vSize = Int(bounds.height/(bounds.width/CGFloat(size)))
         self.tileSize = bounds.width/CGFloat(size)
         genEmptyMaze()
+        waveGen()
+        for i in maze{
+            print(i.mesh)
+        }
+        print(isCollapsed())
     }
     
     func genEmptyMaze(){
@@ -30,7 +37,7 @@ class States: ObservableObject {
             for j in 0...size-1{
                 if (i == 0 && j == 0) || (i == vSize-1 && j == size-1) {
                     let t = Tile(x: j, y: i, rotation: 0, mesh: "Straight")
-                    t.collapsed = true
+                    //t.collapsed = true
                     self.maze.append(t)
                     
                 }
@@ -41,34 +48,75 @@ class States: ObservableObject {
             }
         }
     }
+    
+    func iterate(){
+        let tile = getLowestEntropyTile()
+        tile.collapse()
+        propagate(tile)
+    }
     func propagate(_ tile: Tile){
         stack.append(tile)
         
         while stack.count > 0{
             let curTile = stack.popLast()
+            var face = 0
             
-            for dirs in dirs(curTile!){
-               // let possibleProtos = dirs.possiblePrototypes
+            for next in dirs(curTile!){
+                if next == nil {
+                    face += 1
+                    continue
+                }
+                let nextPossibleProtos = next!.possiblePrototypes
+                let curPossibleNeighbours = getNeighboursList(curTile!, face)
                 
+                if nextPossibleProtos.count == 0{
+                    face += 1
+                    continue
+                }
+                for prototype in nextPossibleProtos{
+                    if !curPossibleNeighbours.contains(prototype){
+                        next!.constrain(prototype)
+                        if !stack.contains(next!) {
+                            stack.append(next!)
+                        }
+                    }
+                }
+                face += 1
             }
             
         }
     }
     
-    func dirs(_ tile: Tile)-> [Tile]{
-        var tiles: [Tile] = []
+    func getNeighboursList(_ tile: Tile, _ d: Int) -> [String]{
+        if d == 0{
+           return tile.possibleNeighbours[0]["n"]!
+        }
+        if d == 1{
+            return tile.possibleNeighbours[1]["s"]!
+        }
+        if d == 2{
+            return tile.possibleNeighbours[2]["e"]!
+        }
+        if d == 3 {
+            return tile.possibleNeighbours[3]["w"]!
+        }
+        return []
+    }
+    
+    func dirs(_ tile: Tile)-> [Tile?]{
+        var tiles: [Tile?] = []
         
-        var t = findTile(tile.x+1, tile.y)
-        if t != nil {tiles.append(t!)}
-        
-        t = findTile(tile.x-1, tile.y)
-        if t != nil {tiles.append(t!)}
-        
-        t = findTile(tile.x, tile.y-1)
-        if t != nil {tiles.append(t!)}
+        var t = findTile(tile.x, tile.y-1)
+        tiles.append(t)
         
         t = findTile(tile.x, tile.y+1)
-        if t != nil {tiles.append(t!)}
+        tiles.append(t)
+        
+        t = findTile(tile.x+1, tile.y)
+        tiles.append(t)
+        
+        t = findTile(tile.x-1, tile.y)
+        tiles.append(t)
         
         return tiles
     }
@@ -107,6 +155,9 @@ class States: ObservableObject {
         
     }
     func waveGen(){
+        while !isCollapsed(){
+            iterate()
+        }
         
     }
 }
