@@ -43,7 +43,11 @@ public class Tile: Equatable{
     }
     func fillPrototypes(){
         for i in socketInfo{
-            possiblePrototypes.append(i.key)
+            let w = socketInfo[i.key]![2]["weight"] as! Int
+            for _ in 0...w-1 {
+                possiblePrototypes.append(i.key)
+            }
+            
         }
         
     }
@@ -65,7 +69,7 @@ public class Tile: Equatable{
         let tile = socketInfo[prototype]!
         self.mesh = tile[0]["mesh"]! as! String
         self.rotation = tile[1]["rotation"] as! Int
-        self.possibleNeighbours = tile[6]["neighbours"] as! [[String: [String]]]
+        self.possibleNeighbours = tile[7]["neighbours"] as! [[String: [String]]]
     }
     
     

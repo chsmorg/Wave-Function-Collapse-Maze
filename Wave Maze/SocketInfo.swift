@@ -22,6 +22,7 @@ var socketInfo = [
     "s0": [
         ["mesh" : "Straight"],
         ["rotation": 0],
+        ["weight": 5],
         ["n": 1],
         ["s": 1],
         ["e": 0],
@@ -36,6 +37,7 @@ var socketInfo = [
     "s1" : [
         ["mesh" : "Straight"],
         ["rotation": 1 ],
+        ["weight": 5],
         ["n": 0 ],
         ["s": 0 ],
         ["e": 1 ],
@@ -47,23 +49,25 @@ var socketInfo = [
             ["w": ["i3", "i1", "c0", "d1", "s1", "i2", "i4", "c2"] ]
         ]]
     ],
-//    "i4" : [
-//        ["mesh" : "Intersection4"],
-//        ["rotation": 0 ],
-//        ["n": 1 ],
-//        ["s": 1 ],
-//        ["e": 1 ],
-//        ["w": 1 ],
-//        ["neighbours":[
-//            ["n": ["s0", "i4", "d0", "i0", "c1", "i1", "i2", "c0"] ],
-//            ["s": ["i0", "d2", "s0", "c3", "i2", "i4", "i3", "c2"] ],
-//            ["e": ["s1", "c3", "c1", "i3", "d3", "i1", "i4", "i0"] ],
-//            ["w": ["i3", "i1", "c0", "d1", "s1", "i2", "i4", "c2"] ]
-//        ]]
-//    ],
+    "i4" : [
+        ["mesh" : "Intersection4"],
+        ["rotation": 0 ],
+        ["weight": 1],
+        ["n": 1 ],
+        ["s": 1 ],
+        ["e": 1 ],
+        ["w": 1 ],
+        ["neighbours":[
+            ["n": ["s0", "i4", "d0", "i0", "c1", "i1", "i2", "c0"] ],
+            ["s": ["i0", "d2", "s0", "c3", "i2", "i4", "i3", "c2"] ],
+            ["e": ["s1", "c3", "c1", "i3", "d3", "i1", "i4", "i0"] ],
+            ["w": ["i3", "i1", "c0", "d1", "s1", "i2", "i4", "c2"] ]
+        ]]
+    ],
      "e" : [
         ["mesh" : "EmptyTile"],
         ["rotation": 0 ],
+        ["weight": 1],
         ["n": -1 ],
         ["s": -1 ],
         ["e": -1 ],
@@ -78,6 +82,7 @@ var socketInfo = [
     "i0" : [
         ["mesh" : "Intersection3"],
         ["rotation": 0 ],
+        ["weight": 1],
         ["n": 1 ],
         ["s": 1 ],
         ["e": 0 ],
@@ -92,6 +97,7 @@ var socketInfo = [
      "i1" : [
         ["mesh" : "Intersection3"],
         ["rotation": 1 ],
+        ["weight": 1],
         ["n": 0 ],
         ["s": 1 ],
         ["e": 1 ],
@@ -106,6 +112,7 @@ var socketInfo = [
     "i2" : [
         ["mesh" : "Intersection3"],
         ["rotation": 2 ],
+        ["weight": 1],
         ["n": 1 ],
         ["s": 1 ],
         ["e": 1 ],
@@ -120,6 +127,7 @@ var socketInfo = [
     "i3" : [
         ["mesh" : "Intersection3"],
         ["rotation": 3 ],
+        ["weight": 1],
         ["n": 1 ],
         ["s": 0 ],
         ["e": 1 ],
@@ -134,6 +142,7 @@ var socketInfo = [
     "d0" : [
         ["mesh" : "DeadEnd"],
         ["rotation": 0 ],
+        ["weight": 2],
         ["n": 0 ],
         ["s": 1 ],
         ["e": 0 ],
@@ -148,6 +157,7 @@ var socketInfo = [
      "d1" : [
         ["mesh" : "DeadEnd"],
         ["rotation": 1 ],
+        ["weight": 2],
         ["n": 0 ],
         ["s": 0 ],
         ["e": 1 ],
@@ -162,6 +172,7 @@ var socketInfo = [
      "d2" : [
         ["mesh" : "DeadEnd"],
         ["rotation": 2 ],
+        ["weight": 2],
         ["n": 1 ],
         ["s": 0 ],
         ["e": 0 ],
@@ -176,6 +187,7 @@ var socketInfo = [
     "d3" : [
         ["mesh" : "DeadEnd"],
         ["rotation": 3 ],
+        ["weight": 2],
         ["n": 0 ],
         ["s": 0 ],
         ["e": 0 ],
@@ -190,6 +202,7 @@ var socketInfo = [
      "c0" : [
         ["mesh" : "Corner"],
         ["rotation": 0 ],
+        ["weight": 2],
         ["n": 0 ],
         ["s": 1 ],
         ["e": 1 ],
@@ -204,6 +217,7 @@ var socketInfo = [
      "c1" : [
         ["mesh" : "Corner"],
         ["rotation": 1 ],
+        ["weight": 2],
         ["n": 0 ],
         ["s": 1 ],
         ["e": 0 ],
@@ -218,6 +232,7 @@ var socketInfo = [
      "c2" : [
         ["mesh" : "Corner"],
         ["rotation": 2 ],
+        ["weight": 2],
         ["n": 1 ],
         ["s": 0 ],
         ["e": 1 ],
@@ -232,6 +247,7 @@ var socketInfo = [
      "c3" : [
         ["mesh" : "Corner"],
         ["rotation": 3 ],
+        ["weight": 2],
         ["n": 1 ],
         ["s": 0 ],
         ["e": 0 ],
