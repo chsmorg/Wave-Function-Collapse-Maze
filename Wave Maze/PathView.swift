@@ -39,10 +39,7 @@ struct PathView: View {
                         if count == index{
                         
                         }
-                        
                     }
-                   }.onTapGesture{
-                       
                    }
               }
               if tile.mesh == "EmptyTile"{

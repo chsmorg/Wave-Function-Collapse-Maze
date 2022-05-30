@@ -28,22 +28,46 @@ class States: ObservableObject {
         genEmptyMaze()
         waveGen()
     }
-    
+    // sets corner and edge tiles 
     func genEmptyMaze(){
         for i in 0...vSize-1{
             for j in 0...size-1{
+                let t = Tile(x: j, y: i, prototype: "e")
                 if (i == 0 && j == 0) || (i == vSize-1 && j == size-1) {
-                    let t = Tile(x: j, y: i, prototype: "s0")
                     t.possiblePrototypes = ["s0"]
                     t.entropy = 1
-                    self.maze.append(t)
-                    
-                    
+                  }
+                else if i == vSize-1 && j == 0{
+                    t.possiblePrototypes = ["c2", "d2","d1"]
+                    t.entropy = 1
+                }
+                else if i == 0 && j == size-1{
+                    t.possiblePrototypes = ["c1","d0","d3"]
+                    t.entropy = 1
                 }
                 else{
-                    self.maze.append(Tile(x: j, y: i, prototype: "e"))
+                    
+                    if i == 0 {
+                        t.possiblePrototypes = ["d1", "d3", "s1", "c1", "d0", "i1", "c0"]
+                        t.entropy = t.possiblePrototypes.count
+                    }
+                    if j == 0{
+                        t.possiblePrototypes = ["c0", "d0", "d2", "d1", "c2", "i2", "s0"]
+                        t.entropy = t.possiblePrototypes.count
+                    }
+                    if i == vSize-1{
+                        t.possiblePrototypes = ["d3", "d1", "i3", "d2", "c2", "c3", "s1"]
+                        t.entropy = t.possiblePrototypes.count
+                    }
+                    if j == size-1{
+                        t.possiblePrototypes = ["s0", "d3", "i0", "c1", "d2", "c3", "d0"]
+                        t.entropy = t.possiblePrototypes.count
+                    }
+                    
+                    
                 }
-                
+                self.maze.append(t)
+               
             }
         }
     }
