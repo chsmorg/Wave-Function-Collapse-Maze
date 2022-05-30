@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct Corner: View {
-    var size: CGFloat = 00
-    var pos: Int = 0
+    var size: CGFloat = 50
+    var pos: Int = 3
     var body: some View {
         ZStack{
             Rectangle().frame(width: size, height: size).foregroundColor(.black)

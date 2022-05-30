@@ -18,6 +18,7 @@ class States: ObservableObject {
     @Published var vSize: Int
     @Published var maze: [Tile] = []
     @Published var stack: [Tile] = []
+    @Published var path: [Tile] = []
     
     init(size: Int, bounds: CGRect){
         self.size = size
@@ -26,23 +27,21 @@ class States: ObservableObject {
         self.tileSize = bounds.width/CGFloat(size)
         genEmptyMaze()
         waveGen()
-        for i in maze{
-            print(i.mesh)
-        }
-        print(isCollapsed())
     }
     
     func genEmptyMaze(){
         for i in 0...vSize-1{
             for j in 0...size-1{
                 if (i == 0 && j == 0) || (i == vSize-1 && j == size-1) {
-                    let t = Tile(x: j, y: i, rotation: 0, mesh: "Straight")
-                    //t.collapsed = true
+                    let t = Tile(x: j, y: i, prototype: "s0")
+                    t.possiblePrototypes = ["s0"]
+                    t.entropy = 1
                     self.maze.append(t)
+                    
                     
                 }
                 else{
-                    self.maze.append(Tile(x: j, y: i, rotation: 0, mesh: "EmptyTile"))
+                    self.maze.append(Tile(x: j, y: i, prototype: "e"))
                 }
                 
             }
@@ -52,6 +51,7 @@ class States: ObservableObject {
     func iterate(){
         let tile = getLowestEntropyTile()
         tile.collapse()
+        path.append(tile)
         propagate(tile)
     }
     func propagate(_ tile: Tile){
@@ -60,7 +60,6 @@ class States: ObservableObject {
         while stack.count > 0{
             let curTile = stack.popLast()
             var face = 0
-            
             for next in dirs(curTile!){
                 if next == nil {
                     face += 1
@@ -68,6 +67,7 @@ class States: ObservableObject {
                 }
                 let nextPossibleProtos = next!.possiblePrototypes
                 let curPossibleNeighbours = getNeighboursList(curTile!, face)
+                 
                 
                 if nextPossibleProtos.count == 0{
                     face += 1
@@ -77,9 +77,11 @@ class States: ObservableObject {
                     if !curPossibleNeighbours.contains(prototype){
                         next!.constrain(prototype)
                         if !stack.contains(next!) {
-                            stack.append(next!)
-                        }
+                               stack.append(next!)
+                           }
+                    
                     }
+                    
                 }
                 face += 1
             }
@@ -140,15 +142,20 @@ class States: ObservableObject {
     }
     func getLowestEntropyTile() -> Tile {
         var entropy = 100
-        var tile: Tile? = nil
+        var tiles: [Tile] = []
+        
         for i in maze{
-            if i.entropy < entropy && i.collapsed == false {
+            if i.entropy < entropy && !i.collapsed{
                 entropy = i.entropy
-                tile = i
                 
             }
         }
-        return tile!
+        for i in maze{
+            if i.entropy == entropy && !i.collapsed{
+                tiles.append(i)
+            }
+        }
+        return tiles[Int.random(in: 0...tiles.count-1)]
     }
     
     func genRandMaze(){

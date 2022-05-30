@@ -17,12 +17,13 @@ public class Tile: Equatable{
     
     var mesh: String = "EmptyTile"
     var collapsed = false
+    var animated = false
     var x: Int
     var y: Int
     var possiblePrototypes: [String] = []
     var possibleNeighbours: [[String: [String]]] = []
     //var neighbours: [Tile] = []
-    var rotation: Int
+    var rotation: Int = 0
     var entropy: Int = 0
     
     //sockets
@@ -32,19 +33,12 @@ public class Tile: Equatable{
     //3 = west
     
     
-    init(x: Int , y: Int, rotation: Int, mesh: String){
+    init(x: Int , y: Int, prototype: String){
         self.x = x
         self.y = y
-        self.rotation = rotation
-        self.mesh = mesh
+        self.setTileData(prototype)
         self.fillPrototypes()
-        self.entropy = possiblePrototypes.count-1
-        self.setTileData("e")
-        //self.setTileData("s0")
-        
-       // print(possibleNeighbours[3]["w"]!)
-        // print(possibleRotations)
-       //print(possiblePrototypes)
+        self.entropy = possiblePrototypes.count
        
     }
     func fillPrototypes(){
@@ -54,10 +48,17 @@ public class Tile: Equatable{
         
     }
     func collapse(){
-        let r = Int.random(in: 0...self.possiblePrototypes.count-1)
-        let prototype = self.possiblePrototypes[r]
-        self.setTileData(prototype)
-        self.collapsed = true
+        if self.possiblePrototypes.count != 0{
+            let r = Int.random(in: 0...self.possiblePrototypes.count-1)
+            let prototype = self.possiblePrototypes[r]
+            self.setTileData(prototype)
+            self.collapsed = true
+        }
+        else{
+            self.setTileData("e")
+            self.collapsed = true
+        }
+        
     }
     
     func setTileData(_ prototype: String){
@@ -65,12 +66,11 @@ public class Tile: Equatable{
         self.mesh = tile[0]["mesh"]! as! String
         self.rotation = tile[1]["rotation"] as! Int
         self.possibleNeighbours = tile[6]["neighbours"] as! [[String: [String]]]
-        
     }
     
     
     func constrain(_ prototype: String){
-        if(entropy != 0){
+        
             for i in 0...possiblePrototypes.count-1{
                 if prototype == possiblePrototypes[i]{
                     possiblePrototypes.remove(at: i)
@@ -78,6 +78,5 @@ public class Tile: Equatable{
                     break
                 }
             }
-        }
     }
 }

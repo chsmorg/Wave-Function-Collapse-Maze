@@ -24,6 +24,7 @@
 		AB69C873283EBA7200D9E6DF /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69C872283EBA7200D9E6DF /* States.swift */; };
 		AB69C875283EBAAF00D9E6DF /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69C874283EBAAF00D9E6DF /* Tile.swift */; };
 		AB69C878283EC55700D9E6DF /* SocketInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69C877283EC55700D9E6DF /* SocketInfo.swift */; };
+		ABF16AF5284044A90016B2BB /* PathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF16AF4284044A90016B2BB /* PathView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		AB69C872283EBA7200D9E6DF /* States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
 		AB69C874283EBAAF00D9E6DF /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		AB69C877283EC55700D9E6DF /* SocketInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketInfo.swift; sourceTree = "<group>"; };
+		ABF16AF4284044A90016B2BB /* PathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				AB69C863283E9F9900D9E6DF /* Maze Sections */,
 				AB69C837283E9ABB00D9E6DF /* Wave_MazeApp.swift */,
 				AB69C861283E9B1500D9E6DF /* MazeView.swift */,
+				ABF16AF4284044A90016B2BB /* PathView.swift */,
 				AB69C866283EA39700D9E6DF /* GridView.swift */,
 				AB69C83B283E9ABD00D9E6DF /* Assets.xcassets */,
 				AB69C83D283E9ABD00D9E6DF /* Preview Content */,
@@ -308,6 +311,7 @@
 				AB69C865283EA00000D9E6DF /* Straight.swift in Sources */,
 				AB69C867283EA39700D9E6DF /* GridView.swift in Sources */,
 				AB69C878283EC55700D9E6DF /* SocketInfo.swift in Sources */,
+				ABF16AF5284044A90016B2BB /* PathView.swift in Sources */,
 				AB69C86D283EB5CC00D9E6DF /* Corner.swift in Sources */,
 				AB69C873283EBA7200D9E6DF /* States.swift in Sources */,
 				AB69C86F283EB6A400D9E6DF /* DeadEnd.swift in Sources */,

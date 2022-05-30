@@ -13,13 +13,13 @@ struct Intersection3: View {
         var body: some View {
             ZStack{
                 Rectangle().frame(width: size, height: size).foregroundColor(.black)
-                if pos == 0{
+                if pos == 1{
                     Rectangle().frame(width: size/2, height: size/2).foregroundColor(.white)
                     Rectangle().frame(width: size/2, height: size/2).foregroundColor(.white).offset(y: +size/4)
                     Rectangle().frame(width: size/2, height: size/2).foregroundColor(.white).offset(x: +size/4)
                     Rectangle().frame(width: size/2, height: size/2).foregroundColor(.white).offset(x: -size/4)
                 }
-                if pos == 1{
+                if pos == 3{
                     //y
                     Rectangle().frame(width: size/2, height: size/2).foregroundColor(.white)
                     Rectangle().frame(width: size/2, height: size/2).foregroundColor(.white).offset(y: -size/4)
@@ -40,7 +40,7 @@ struct Intersection3: View {
                     Rectangle().frame(width: size/2, height: size/2).foregroundColor(.white).offset(x: +size/4)
                     
                 }
-                if pos == 3{
+                if pos == 0{
                     
                     Rectangle().frame(width: size/2, height: size/2).foregroundColor(.white)
                     
